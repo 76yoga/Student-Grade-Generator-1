@@ -1,20 +1,20 @@
-function calculateGrade (marks) {
-    if (marks > 79) {
-        return "A";
-}else if (marks>=60 && marks<=79) {
-        return "B";
-}else if (marks<=59 && marks >=49.1) {
-        return "C";
-}else if (marks>=40 && marks <=49) {
-        return "D";
-}else if (marks >=0 && marks <=39.9) {
-        return "E";
-}else {
-    return(invalid)
+// //Write a program that prompts the user to input student marks. The input should be between 0 and 100. Then output the correct grade as follows: 
+// A > 79, B > 60 to 79, C > 59 to 49, D > 40 to 49, E > less 40.
+const prompt = require("prompt-sync")();
+let studentMarks = parseInt(prompt('Enter your marks: '));
+function checkStudentGrade(studentMarks){
+if (studentMarks > 79 && studentMarks <= 100) {
+        return "A"
+    } else if (studentMarks > 60 && studentMarks <= 79) {
+        return "B"
+    } else if (studentMarks > 49 && studentMarks <= 59) {
+        return "C"
+    }else if (studentMarks >= 40 && studentMarks <=49) {
+        return "D"
+    } else if (studentMarks < 40) {
+        return "E"
+    } else {
+        return "Enter valid marks"
+    }
 }
-}      
-console.log (calculateGrade(85)) //you will get "A"
-console.log (calculateGrade(66)) //you will get "B"
-console.log (calculateGrade(56)) //you will get "C"
-console.log (calculateGrade(45)) //you will get "D"
-console.log (calculateGrade(25)) //you will get "E"
+console.log(checkStudentGrade(studentMarks));
